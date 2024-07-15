@@ -1,8 +1,8 @@
-# ERC-3643 RAPTOR - SCAFFOLD ETH 2 VERSION:
+# ERC-3643 RAPTOR - POLYGON TESTNET VERSION:
 
 ## 🦖 RAPTOR: An Educational Approach to the T-REX Standard (ERC-3643)
 
-![T-REX](https://repository-images.githubusercontent.com/639089118/95a268d6-0902-40e8-9e61-f46133e6d9ee)
+![T-REX](https://raw.githubusercontent.com/malba-blockchain/Security-Token-ERC-3643-Raptor-Scaffold-ETH/main/raptor-testnet-deployment.png
 
 ## Introduction
 
@@ -12,22 +12,11 @@ The Raptor version, created by Adam Boudj [@Aboudjem](https://github.com/Aboudje
 
 You can check the [Original Raptor Version here](https://github.com/Aboudjem/ERC-3643).
 
-# 🏗 Scaffold-ETH 2
+## Testnet version
 
-<h4 align="center">
-  <a href="https://docs.scaffoldeth.io">Documentation</a> |
-  <a href="https://scaffoldeth.io">Website</a>
-</h4>
+The tesnet version is a deployment created to work on any EVM compatible blockchain.
 
-🧪 An open-source, up-to-date toolkit for building decentralized applications (dapps) on the Ethereum blockchain. It's designed to make it easier for developers to create and deploy smart contracts and build user interfaces that interact with those contracts.
-
-⚙️ Built using NextJS, RainbowKit, Hardhat, Wagmi, Viem, and Typescript.
-
-- ✅ **Contract Hot Reload**: Your frontend auto-adapts to your smart contract as you edit it.
-- 🪝 **[Custom hooks](https://docs.scaffoldeth.io/hooks/)**: Collection of React hooks wrapper around [wagmi](https://wagmi.sh/) to simplify interactions with smart contracts with typescript autocompletion.
-- 🧱 [**Components**](https://docs.scaffoldeth.io/components/): Collection of common web3 components to quickly build your frontend.
-- 🔥 **Burner Wallet & Local Faucet**: Quickly test your application with a burner wallet and local faucet.
-- 🔐 **Integration with Wallet Providers**: Connect to different wallet providers and interact with the Ethereum network.
+This specific version is deployed on the Amoy Polygon Testnet. Which represents an environment extremely simmilar to the mainnet version.
 
 ![Debug Contracts tab](https://raw.githubusercontent.com/malba-blockchain/Security-Token-ERC-3643-Raptor-Scaffold-ETH/main/raptor-screenshot.PNG)
 
@@ -46,48 +35,60 @@ To get started with Scaffold-ETH 2, follow the steps below:
 1. Clone this repo & install dependencies
 
 ```
-git clone https://github.com/malba-blockchain/Security-Token-ERC-3643-Raptor-Scaffold-ETH.git
-cd Security-Token-ERC-3643-Raptor-Scaffold-ETH
+git clone https://github.com/malba-blockchain/Security-Token-ERC-3643-Testnet-Deployment.git
+cd Security-Token-ERC-3643-Testnet-Deployment
 yarn install
+
+```
+
+2. Ensure to clean and recompile smart contracts:
+
+```
 yarn hardhat clean
+yarn compile --force
 ```
 
-2. Run a local network in the first terminal:
+3. Create a .env file in the folder "packages\hardhat", filling the following fields:
 
 ```
-yarn chain
+REACT_APP_DEPLOYER_PRIVATE_KEY= Private key of the wallet you want to use as deployer
+REACT_APP_CLAIM_ISSUER_PRIVATE_KEY= Private key of the wallet you want to use as claim issuer
+REACT_APP_ISSUER_AGENT_ADMIN_PRIVATE_KEY= Using a single wallet for three roles (issuer, agent and admin)
+REACT_APP_ADAM_PRIVATE_KEY= Private key of the first user
+REACT_APP_BOB_PRIVATE_KEY= Private key of the second user
+REACT_APP_CHARLIE_PRIVATE_KEY= Private key of the third user
+REACT_APP_ALCHEMY_API_KEY= Get your APY_KEY by creating an account on https://auth.alchemy.com/
+REACT_APP_ETHERSCAN_API_KEY= Get your API_KEY by creating an account on https://polygonscan.com/login
 ```
 
-This command starts a local Ethereum network using Hardhat. The network runs on your local machine and can be used for testing and development. You can customize the network configuration in `hardhat.config.ts`.
-
-3. On a second terminal, deploy the test contract:
+4. Make sure to get MATIC to pay for deplyment of smart contracts and transaction fees in all the wallets you have
 
 ```
-yarn deploy
+https://faucet.polygon.technology/
+https://www.alchemy.com/faucets/polygon-amoy 
 ```
 
-This command deploys a test smart contract to the local network. The contract is located in `packages/hardhat/contracts` and can be modified to suit your needs. The `yarn deploy` command uses the deploy script located in `packages/hardhat/deploy` to deploy the contract to the network. You can also customize the deploy script.
+MAKE SURE YOU GOT MATIC IN ALL YOUR WALLETS OR YOU WILL HAVE ISSUES DEPLOYING
+MAKE SURE YOU GOT API KEYS FOR THE RIGHT NETWORK OR YOU WILL HAVE ISSUES DEPLOYING
 
-4. On a third terminal, start your NextJS app:
-
-```
-yarn start
-```
-
-Visit your app on: `http://localhost:3000`. You can interact with your smart contract using the `Debug Contracts` page. You can tweak the app config in `packages/nextjs/scaffold.config.ts`.
-
-5. On a fourth terminal, run local tests to check the security token functionalities made possible by ERC-3643 standard.
+5. Open a new terminal in the main folder and type the command:
 
 ```
-yarn test
+yarn deploy --reset --network polygonAmoy
 ```
+
+This command deploys the smart contracts to the test network.
+
 
 **What's next**:
 
-- Check scripts to use the different functionalities of the security token standard in packages/hardhat//deploy_paused/01_full_deploy_with_tests.ts
-- Edit your frontend homepage at `packages/nextjs/app/page.tsx`. For guidance on [routing](https://nextjs.org/docs/app/building-your-application/routing/defining-routes) and configuring [pages/layouts](https://nextjs.org/docs/app/building-your-application/routing/pages-and-layouts) checkout the Next.js documentation.
-- Edit your additional deployment scripts in `packages/hardhat/deploy`
-- Edit your smart contract test in: `packages/hardhat/test`. To run test remember to use `yarn test`
+Verify your smart contracts using 2 main methods:
+
+1. Via polygonscan https://amoy.polygonscan.com/verifyContract
+Uploading the file generated by the command yarn hardhat flatten contracts/onchain-id/Identity.sol > flattened/Identity.sol
+
+2. Via Hardhat using the command: yarn hardhat-verify --network polygonAmoy 0x4ec843f44d361b1bDCba588705c6E218965232da --constructor-args scripts/arguments_identity_registry.js
+
 
 ## Documentation
 
@@ -100,7 +101,7 @@ Visit [Scaffold ETH Docs](https://docs.scaffoldeth.io) to learn how to start bui
 ## Contributing to ERC-3643 Raptor Scaffold ETH version
 
 We welcome contributions to this version!
-My goal is to spread the usage of security tokens that can be fully compliant to bring the evolution of financial services to our companies.
+My goal is to spread the usage of security tokens that can be fully compliant to bring the evolution of financial services to the world.
 
 Future looks bright.
 
