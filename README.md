@@ -2,7 +2,7 @@
 
 ## 🦖 RAPTOR: An Educational Approach to the T-REX Standard (ERC-3643)
 
-![T-REX](https://raw.githubusercontent.com/malba-blockchain/Security-Token-ERC-3643-Raptor-Scaffold-ETH/main/raptor-testnet-deployment.png
+![T-REX](https://raw.githubusercontent.com/malba-blockchain/Security-Token-ERC-3643-Testnet-Deployment/main/raptor-testnet-deployment.png)
 
 ## Introduction
 
@@ -18,7 +18,7 @@ The tesnet version is a deployment created to work on any EVM compatible blockch
 
 This specific version is deployed on the Amoy Polygon Testnet. Which represents an environment extremely simmilar to the mainnet version.
 
-![Debug Contracts tab](https://raw.githubusercontent.com/malba-blockchain/Security-Token-ERC-3643-Raptor-Scaffold-ETH/main/raptor-screenshot.PNG)
+![Debug Contracts tab](https://raw.githubusercontent.com/malba-blockchain/Security-Token-ERC-3643-Testnet-Deployment/main/raptor-screenshot.PNG)
 
 ## Requirements
 
@@ -38,7 +38,6 @@ To get started with Scaffold-ETH 2, follow the steps below:
 git clone https://github.com/malba-blockchain/Security-Token-ERC-3643-Testnet-Deployment.git
 cd Security-Token-ERC-3643-Testnet-Deployment
 yarn install
-
 ```
 
 2. Ensure to clean and recompile smart contracts:
@@ -68,7 +67,8 @@ https://faucet.polygon.technology/
 https://www.alchemy.com/faucets/polygon-amoy 
 ```
 
-MAKE SURE YOU GOT MATIC IN ALL YOUR WALLETS OR YOU WILL HAVE ISSUES DEPLOYING
+MAKE SURE YOU GOT MATIC IN ALL YOUR WALLETS OR YOU WILL HAVE ISSUES DEPLOYING.
+
 MAKE SURE YOU GOT API KEYS FOR THE RIGHT NETWORK OR YOU WILL HAVE ISSUES DEPLOYING
 
 5. Open a new terminal in the main folder and type the command:
