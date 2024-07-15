@@ -1,0 +1,91 @@
+D:&cd D:\USER\Downloads\ATLAS\Projects\Mastering-Security-Token-ERC-3643\Web3Auth-Mastering\w3a-google-demo&npm run start
+
+npm install
+npm run start
+
+
+d:&cd D:\USER\Downloads\ATLAS\Projects\Mastering-Security-Token-ERC-3643\scaffold-eth-2
+yarn
+yarn hardhat clean
+yarn compile --force
+yarn deploy --reset --network polygonAmoy
+
+
+-------------------DONE-------------------
+
+I. Connect web3auth DONE
+
+Client ID Web3Auth Firebase: BF1YoXGl61BMnkGgRhNbAdBEbUWqyUI0Se-tn8T9DL75b9M8iw0TngdWbdBFjkOoYA9YVeQ9Jgy2SM2DHJnbSl4
+
+Client ID Web3Auth Google: BH855-UE0U6H-Cvq1O2ukHMU09JPtllkDAZkFUhiSQEg86iVoD1yaCxpMUa1TzYpWLuXuBsp_VvFnFUUUhJoV1Q
+
+Verifier name: web3auth-google-verifier001
+
+Google Client ID: 947022819304-okcm8e1nq14m0vm8i8bmocpim6th1hep.apps.googleusercontent.com
+
+
+II. Test interacting with smart contracts already deployed. DONE
+
+-------------------ToDo-------------------
+
+III. Deploy smart contracts on testnet and verify them
+
+
+1. Add api keys required to deploy to Amoney testnet.
+
+polygonscan NV3PM7WWB44UQ95Y29QPRDU3K5Q8RBEYAK
+alchemy bW_eK_aRxQsGnt2dPJiYq4K8-UyKTpor
+alchemy-amoy https://polygon-amoy.g.alchemy.com/v2/bW_eK_aRxQsGnt2dPJiYq4K8-UyKTpor
+
+
+2. Make The web3auth wallet the one with tokenIssuer, tokenAgent and tokenAdmin permissions.
+
+Wallets for 
+Alice
+Bob
+and Charlie wallets will be metamask wallets for me.
+
+
+I cant just use the hardhat wallets because they are of public knowledge any asset sent there will dissapear.
+
+We have 3 options.
+
+A. Generate them using web3auth
+B. Generate them using yarn generate | yarn account
+C. Generate them using metamask wallet. THE CHOSEN ONE.
+
+
+3. Deployer wallet is the one I will send funds to deploy the smart contract
+
+4. I will use another gmail account for web3auth to do the whole enrollment process and test normal user functionalities.
+
+yarn deploy --reset --network polygonAmoy
+
+Verify with no parameters in constructor
+yarn hardhat-verify --network polygonAmoy CONTRACT_ADDRESS
+
+Verify with parameters in constructor
+yarn hardhat-verify --network polygonAmoy CONTRACT_ADDRESS --constructor-args arguments.js
+
+Note: To verify a library smart contract, first you flatten it and then use etherscan to upload the full .sol file.
+
+Mission: All smart contracts deployed and verified and web3auth wallets interacting with them.
+
+
+IV. Create interactions with the deployed smart contract using web3auth interface.
+
+V. Launch online using vercel/simmilar
+
+
+CONTINUE HERE: Upload github repo.
+
+
+
+
+
+
+
+
+
+
+

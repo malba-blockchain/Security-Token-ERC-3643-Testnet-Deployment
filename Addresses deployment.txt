@@ -1,0 +1,160 @@
+Web3 auth created
+0x7a82c50eDDc576d5Cd26b530424D7d465D311bB9
+
+Main wallet
+0xB803cB7d42291DC78C5f4Db23B7363c04c6274A4
+
+Smart contract to test interaction
+0x98FDf4369d35f4dC6764EE108438EF0025C8f78b
+
+Wallet addresses to test interaction
+0x5Ec8e52C7d7f502c778689d8ba5aD747950E6093
+0xFfD76ff981cc7EA15EE2F67680815763C4C7683E
+
+
+~~ Accounts ~~
+Deployer:  0xb44e0C06718534F27847e607B6AE9368798fB974
+Token Issuer:  0x7a82c50eDDc576d5Cd26b530424D7d465D311bB9
+Token Agent:  0x7a82c50eDDc576d5Cd26b530424D7d465D311bB9
+Token Admin:  0x7a82c50eDDc576d5Cd26b530424D7d465D311bB9
+Claim Issuer:  0xEDfcDEf54AE487Bd2F49e88E5b447cC26eB48e47
+Claim Issuer Signing Key:  0x55ACd49EAAc52c57d001C9fE5B9D440C0F3f6d5D
+Adam Action Key:  0xc17B6C79F16AB17d49Ea499ad987b06AF209c369
+Adam Wallet:  0x6Fbc023ACCBA56c1b32bDaFA2F27D4cd58145AB1
+Bob Wallet:  0x9a4B007a10E1d1EC63157c8D69eBa76F30B4a2B4
+Charlie Wallet:  0x34795B6a05543Fe097C8BbBc221e3119f27B793E
+
+~~ Suite ~~
+
+Identity Implementation Contract Deployment...
+Identity Implementation Contract Address: :  0x2A9CBB28b329cebC48D09EA34aECe8759E31Db00
+
+Identity Implementation Authority Deployment...
+Identity Implementation Authority Contract Address:  0x35A2980A60ddbDc8d4Da08DCf1d7cD4dbE3fC5A7
+
+Claim Topics Registry Deployment...
+Claim Topics Registry Contract Address:  0x34591de6f7606d41644eD10F16f6C07542c6B50A
+
+Claim Issuers Registry Deployment...
+Claim Issuers Registry Contract Address:  0xbcA0446Ac4E82c0685DEc89A9Ee0E7896543927F
+
+Identity Registry Storage Deployment...
+Identity Registry Storage Contract Address:  0xd7398CD1Ae98dB99671E7fdf1979B0da8C86B431
+
+Identity Registry Deployment...
+Identity Registry Contract Address:  0x4ec843f44d361b1bDCba588705c6E218965232da
+
+Basic Compliance Deployment...
+Basic Compliance Contract Address:  0xbfdD5D76AB5A20BD5605aD40afF33d4211c20F21
+
+TokenOID Deployment...
+TokenOID Contract Address:  0x096C680201025483785c68A5B9cEDa1DDEa2dd4F
+
+Token Deployment...
+Token Contract Address:  0x60E5799fed9ACbdaF36e752a05468f1519b03c6f
+
+~~ Claims setup ~~
+
+Claim Issuer Deployment...
+Claim Issuer Contract Address:  0x94D2Ec1a787d97d0a4A86b8d04217f66afd23caA
+
+Deployer Identity Deployment...
+Deployer Identity Contract:  0xBe2a81d7672145eE4fF550d9780d71e0C09D07Dc
+
+Adam Identity Deployment...
+Adam Identity Contract:  0xe8fe41655b32BA93F1Aa27a266b0743afA019428
+
+Bob Identity Deployment...
+Bob Identity Contract:  0x2643B16B5D2D31c8Bf59f4E170Cb6B1BC27c5790
+
+Charlie Identity Deployment...
+Charlie Identity Contract:  0xd30e99C61B55C360ece31e952B26793a723c0173
+
+
+
+CONTRACTS DEPLOYED
+
+1. DONE Identity Implementation (deployer.address, true) | arguments_identity_implementation.js
+
+0x2A9CBB28b329cebC48D09EA34aECe8759E31Db00
+
+yarn hardhat flatten contracts/onchain-id/Identity.sol > flattened/Identity.sol
+
+
+2. DONE Identity Implementation Authority (deployer.address)  - arguments_identity_implementation_authority.js
+
+0x35A2980A60ddbDc8d4Da08DCf1d7cD4dbE3fC5A7
+
+yarn hardhat flatten contracts/onchain-id/proxy/ImplementationAuthority.sol > flattened/ImplementationAuthority.sol
+
+
+3. DONE Claim Topics Registry ()
+yarn hardhat-verify --network polygonAmoy 0x34591de6f7606d41644eD10F16f6C07542c6B50A
+
+
+
+4. DONE Claim Issuers Registry ()
+yarn hardhat-verify --network polygonAmoy 0xbcA0446Ac4E82c0685DEc89A9Ee0E7896543927F
+
+
+
+5. DONE Identity Registry Storage ()
+yarn hardhat-verify --network polygonAmoy  0xd7398CD1Ae98dB99671E7fdf1979B0da8C86B431
+
+
+
+6. DONE Identity Registry (claimIssuersRegistry.address, claimTopicsRegistry.address, identityRegistryStorage.address) - arguments_identity_registry.js
+
+0x4ec843f44d361b1bDCba588705c6E218965232da
+
+yarn hardhat-verify --network polygonAmoy 0x4ec843f44d361b1bDCba588705c6E218965232da --constructor-args scripts/arguments_identity_registry.js
+
+
+
+7. DONE Basic Compliance ()
+yarn hardhat-verify --network polygonAmoy 0xbfdD5D76AB5A20BD5605aD40afF33d4211c20F21
+
+
+
+8. DONE TokenOID Deployment ( identityImplementationAuthority.address, tokenIssuer.address ) - arguments_tokenoid.js
+
+0x096C680201025483785c68A5B9cEDa1DDEa2dd4F 
+
+yarn hardhat flatten contracts\onchain-id\proxy\IdentityProxy.sol > flattened/IdentityProxy.sol
+
+
+
+9. DONE Token ( identityRegistry.address, basicCompliance.address, tokenName, tokenSymbol, tokenDecimals,tokenOID.address) - arguments_token.js
+
+yarn hardhat-verify --network polygonAmoy 0x60E5799fed9ACbdaF36e752a05468f1519b03c6f --constructor-args scripts/arguments_token.js
+
+
+
+10. DONE ClaimIssuer contract (claimIssuer.address) - arguments_claimissuer.js
+
+yarn hardhat-verify --network polygonAmoy 0x94D2Ec1a787d97d0a4A86b8d04217f66afd23caA --constructor-args scripts/arguments_claimissuer.js
+
+
+
+11. DONE Deployer Identity (identityImplementationAuthority.address, deployer.address) - scripts/arguments_deployer_identity.js
+
+yarn hardhat-verify --network polygonAmoy 0xBe2a81d7672145eE4fF550d9780d71e0C09D07Dc--constructor-args scripts/arguments_deployer_identity.js
+
+
+
+12. DONE Adam Identity (identityImplementationAuthority.address, adamWallet.address) - arguments_adam_identity.js
+
+yarn hardhat-verify --network polygonAmoy 0xe8fe41655b32BA93F1Aa27a266b0743afA019428 --constructor-args scripts/arguments_adam_identity.js
+
+
+
+13. DONE Bob Identity (identityImplementationAuthority.address, bobWallet.address) - arguments_bob_identity.js
+
+yarn hardhat-verify --network polygonAmoy 0x2643B16B5D2D31c8Bf59f4E170Cb6B1BC27c5790 --constructor-args scripts/arguments_bob_identity.js
+
+
+
+14. DONE Charlie Identity (identityImplementationAuthority.address, charlieWallet.address) - arguments_charlie_identity.js
+
+yarn hardhat-verify --network polygonAmoy 0xd30e99C61B55C360ece31e952B26793a723c0173 --constructor-args scripts/arguments_charlie_identity.js
+
