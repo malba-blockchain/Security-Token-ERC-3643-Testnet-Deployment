@@ -30,7 +30,7 @@ Before you begin, you need to install the following tools:
 
 ## Quickstart
 
-To get started with Scaffold-ETH 2, follow the steps below:
+To deploy the testnet version, follow the steps below:
 
 1. Clone this repo & install dependencies
 
@@ -96,7 +96,6 @@ Visit [ERC-3643 Whitepaper](https://tokeny.com/wp-content/uploads/2023/05/ERC364
 
 Visit [ERC-3643 Dev Documentation](https://erc-3643.github.io/documentation/docs/abstract) to learn the technical details of the security token standard.
 
-Visit [Scaffold ETH Docs](https://docs.scaffoldeth.io) to learn how to start building with Scaffold-ETH 2.
 
 ## Contributing to ERC-3643 Raptor Testnet version
 
