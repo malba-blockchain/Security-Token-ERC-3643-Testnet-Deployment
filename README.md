@@ -98,7 +98,7 @@ Visit [ERC-3643 Dev Documentation](https://erc-3643.github.io/documentation/docs
 
 Visit [Scaffold ETH Docs](https://docs.scaffoldeth.io) to learn how to start building with Scaffold-ETH 2.
 
-## Contributing to ERC-3643 Raptor Scaffold ETH version
+## Contributing to ERC-3643 Raptor Testnet version
 
 We welcome contributions to this version!
 My goal is to spread the usage of security tokens that can be fully compliant to bring the evolution of financial services to the world.
